@@ -1,418 +1,219 @@
-Contribution: 2019-04-12 10:00
+![commit](https://badgen.net/github/last-commit/sachinchoolur/lightGallery/master)
+![npm](https://img.shields.io/npm/v/lightgallery.svg?color=red)
+![npm-tag](https://badgen.net/github/tag/sachinchoolur/lightgallery)
+![size](https://badgen.net/bundlephobia/minzip/lightgallery?color=cyan)
+![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/lightgallery?color=purple)
+![types](https://badgen.net/npm/types/lightgallery?color=blue)
+![hits](https://badgen.net/jsdelivr/hits/npm/lightgallery?color=pink)
+
+# lightGallery
+
+A customizable, modular, responsive, lightbox gallery plugin. No dependencies.\\
+Available for React.js, Angular, Vue.js, and typescript.
+
+![lightgallery](https://www.lightgalleryjs.com/lightgallery-demo.png)
+
+## Core features
+
+-   Fully responsive.
+-   Modular architecture with built in plugins.
+-   Highly optimized for touch devices.
+-   Mouse drag supports for desktops.
+-   Double-click/Double-tap to see actual size of the image.
+-   Animated thumbnails.
+-   Social sharing.
+-   YouTube Vimeo Wistia and html5 videos Support.
+-   20+ Hardware-Accelerated CSS3 transitions.
+-   Dynamic mode.
+-   Inline gallery.
+-   Full screen support.
+-   Zoom in/out, Pinch to zoom.
+-   Swipe/Drag up/down support to close gallery.
+-   Browser history API(deep linking).
+-   Responsive images.
+-   HTML iframe support.
+-   Multiple instances on one page.
+-   Easily customizable via CSS (SCSS) and Settings.
+-   Smart image preloading and code optimization.
+-   Keyboard Navigation for desktop.
+-   SVG icons.
+-   Accessibility support.
+-   Rotate, flip images.
+-   And many more.
+
+## Documentation
 
-Contribution: 2019-04-12 10:01
+-   [Getting started](https://www.lightgalleryjs.com/docs/getting-started/)
+-   [Settings](https://www.lightgalleryjs.com/docs/settings/)
+-   [React](https://www.lightgalleryjs.com/docs/react/)
+-   [Vue.js](https://www.lightgalleryjs.com/docs/vue/)
+-   [Angular](https://www.lightgalleryjs.com/docs/angular/)
+-   [Demos](https://www.lightgalleryjs.com/demos/thumbnails/)
+-   [CodePen](https://codepen.io/collection/BNNjpR)
+
+## Installation
+
+lightGallery is available on NPM, Yarn, Bower, CDNs, and GitHub. You can use any
+of the following method to download lightGallery.
+
+-   [NPM](https://www.npmjs.com/) - NPM is a package manager for the JavaScript
+    programming language. You can install `lightgallery` using the following
+    command
+
+    ```sh
+    npm install lightgallery
+    ```
+
+-   [YARN](https://yarnpkg.com/) - Yarn is another popular package manager for
+    the JavaScript programming language. If you prefer you can use Yarn instead
+    of NPM
+
+    ```sh
+    yarn add lightgallery
+    ```
+
+-   [Bower](http://bower.io) - You can find lightGallery on Bower package
+    manager as well
+
+    ```sh
+    bower install lightgallery --save
+    ```
+
+-   [GitHub](https://github.com/sachinchoolur/lightGallery/archive/master.zip) -
+    You can also directly download lightgallery from GitHub
+
+-   CDN - If you prefer to use a CDN, you can load files via
+    [jsdelivr](https://www.jsdelivr.com/projects/lightgallery),
+    [cdnjs](https://cdnjs.com/libraries/lightgallery) or
+    [unpkg](https://unpkg.com/browse/lightgallery@latest/)
+
+#### Include CSS and Javascript files
+
+First of all, include lightgallery.css in the &lt;head> of the document. If
+you want include any lightGallery plugin such as thumbnails or zoom, you need to
+include respective css files as well.
+
+Alternatively you can include `lightgallery-bundle.css` which contains
+lightGallery and all plugin styles instead of separate stylesheets.
+
+If you like you can also import scss files instead of css files from the `scss`
+folder.
 
-Contribution: 2019-04-12 10:02
+```HTML
+<head>
+    <link type="text/css" rel="stylesheet" href="css/lightgallery.css" />
 
-Contribution: 2019-04-12 10:03
+    <!-- lightgallery plugins -->
+    <link type="text/css" rel="stylesheet" href="css/lg-zoom.css" />
+    <link type="text/css" rel="stylesheet" href="css/lg-thumbnail.css" />
 
-Contribution: 2019-04-12 10:04
 
-Contribution: 2019-04-16 10:00
+    <!-- OR -->
 
-Contribution: 2019-04-22 10:00
+    <link type="text/css" rel="stylesheet" href="css/lightgallery-bundle.css" />
+</head>
+```
 
-Contribution: 2019-04-22 10:01
+Then include lightgallery.umd.js into your document. If you want to include any
+lightgallery plugin you can include it after lightgallery.umd.js.
 
-Contribution: 2019-04-22 10:02
+```HTML
+<body>
+    ....
 
-Contribution: 2019-04-22 10:03
+    <script src="js/lightgallery.umd.js"></script>
 
-Contribution: 2019-04-22 10:04
+    <!-- lightgallery plugins -->
+    <script src="js/plugins/lg-thumbnail.umd.js"></script>
+    <script src="js/plugins/lg-zoom.umd.js"></script>
+</body>
+```
 
-Contribution: 2019-04-22 10:05
+lightGallery supports AMD, CommonJS and ES6 modules too.
 
-Contribution: 2019-04-22 10:06
+```JavaScript
+import lightGallery from 'lightgallery';
 
-Contribution: 2019-04-23 10:00
+// Plugins
+import lgThumbnail from 'lightgallery/plugins/thumbnail'
+import lgZoom from 'lightgallery/plugins/zoom'
 
-Contribution: 2019-04-23 10:01
+```
 
-Contribution: 2019-04-23 10:02
+#### The markup
 
-Contribution: 2019-04-23 10:03
+lightgallery does not force you to use any kind of markup. you can use whatever
+markup you want.
+<a href="https://www.lightgalleryjs.com/demos/html-markup/">Here</a> can find
+detailed examples of different kinds of markups.
 
-Contribution: 2019-04-23 10:04
+If you know the original size of the media, you can pass it via
+`data-lg-size="${width}-${height}"` attribute for the initial
+[zoom](https://www.lightgalleryjs.com/docs/settings/#zoomFromOrigin) animation.
+But, this is completely optional.
 
-Contribution: 2019-04-23 10:05
+```HTML
+<div id="lightgallery">
+    <a href="img/img1.jpg" data-lg-size="1600-2400">
+        <img alt=".." src="img/thumb1.jpg" />
+    </a>
+    <a href="img/img2.jpg" data-lg-size="1024-800">
+        <img alt=".." src="img/thumb2.jpg" />
+    </a>
+    ...
+</div>
+```
 
-Contribution: 2019-04-23 10:06
+#### Initialize lightGallery
 
-Contribution: 2019-04-23 10:07
+Finally, you need to initiate the gallery by adding the following code.
 
-Contribution: 2019-04-23 10:08
+```javascript
+<script type="text/javascript">
+    lightGallery(document.getElementById('lightgallery'), {
+        plugins: [lgZoom, lgThumbnail],
+        speed: 500,
+        licenseKey: 'your_license_key'
+        ... other settings
+    });
+</script>
+```
 
-Contribution: 2019-04-24 10:00
+[CodePen Demos](https://codepen.io/collection/BNNjpR)
 
-Contribution: 2019-04-24 10:01
+#### License Key
 
-Contribution: 2019-04-26 10:00
+You'll receive a license key via email one you purchase a license [More info](https://www.lightgalleryjs.com/docs/settings/#licenseKey)
 
-Contribution: 2019-04-26 10:01
+#### Plugins
 
-Contribution: 2019-04-26 10:02
+As shown above, you need to pass the plugins via settings if you want to use any
+lightGallery plugins.
 
-Contribution: 2019-04-26 10:03
+If you are including lightGallery files via script tag, please use the same
+plugins names as follows.
 
-Contribution: 2019-04-26 10:04
+`lgZoom`, `lgAutoplay`, ` lgComment`, `lgFullscreen `, `lgHash`, `lgPager`,
+`lgRotate`, `lgShare`, `lgThumbnail`, `lgVideo`, `lgMediumZoom`
 
-Contribution: 2019-04-26 10:05
+## Browser support
 
-Contribution: 2019-04-26 10:06
+lightGallery supports all major browsers including IE 10 and above.
 
-Contribution: 2019-04-26 10:07
+## License
 
-Contribution: 2019-04-26 10:08
+#### Commercial license
 
-Contribution: 2019-04-26 10:09
+If you want to use lightGallery to develop commercial sites, themes, projects,
+and applications, the Commercial license is the appropriate license. With this
+option, your source code is kept proprietary.
+[Read more about the commercial license](https://www.lightgalleryjs.com/license/)
 
-Contribution: 2019-04-26 10:10
+#### Open source license
 
-Contribution: 2019-04-26 10:11
+If you are creating an open source application under a license compatible with
+the GNU GPL license v3, you may use this project under the terms of the GPLv3.
 
-Contribution: 2019-04-29 10:00
+## Support
 
-Contribution: 2019-04-29 10:01
-
-Contribution: 2019-04-29 10:02
-
-Contribution: 2019-04-29 10:03
-
-Contribution: 2019-04-29 10:04
-
-Contribution: 2019-04-29 10:05
-
-Contribution: 2019-04-29 10:06
-
-Contribution: 2019-04-29 10:07
-
-Contribution: 2019-04-30 10:00
-
-Contribution: 2019-04-30 10:01
-
-Contribution: 2019-04-30 10:02
-
-Contribution: 2019-04-30 10:03
-
-Contribution: 2019-04-30 10:04
-
-Contribution: 2019-04-30 10:05
-
-Contribution: 2019-05-03 10:00
-
-Contribution: 2019-05-06 10:00
-
-Contribution: 2019-05-06 10:01
-
-Contribution: 2019-05-06 10:02
-
-Contribution: 2019-05-08 10:00
-
-Contribution: 2019-05-08 10:01
-
-Contribution: 2019-05-09 10:00
-
-Contribution: 2019-05-09 10:01
-
-Contribution: 2019-05-09 10:02
-
-Contribution: 2019-05-09 10:03
-
-Contribution: 2019-05-09 10:04
-
-Contribution: 2019-05-09 10:05
-
-Contribution: 2019-05-10 10:00
-
-Contribution: 2019-05-10 10:01
-
-Contribution: 2019-05-10 10:02
-
-Contribution: 2019-05-10 10:03
-
-Contribution: 2019-05-10 10:04
-
-Contribution: 2019-05-10 10:05
-
-Contribution: 2019-05-10 10:06
-
-Contribution: 2019-05-20 10:00
-
-Contribution: 2019-05-20 10:01
-
-Contribution: 2019-05-20 10:02
-
-Contribution: 2019-05-20 10:03
-
-Contribution: 2019-05-20 10:04
-
-Contribution: 2019-05-20 10:05
-
-Contribution: 2019-05-20 10:06
-
-Contribution: 2019-05-20 10:07
-
-Contribution: 2019-05-20 10:08
-
-Contribution: 2019-05-20 10:09
-
-Contribution: 2019-05-21 10:00
-
-Contribution: 2019-05-21 10:01
-
-Contribution: 2019-05-22 10:00
-
-Contribution: 2019-05-22 10:01
-
-Contribution: 2019-05-22 10:02
-
-Contribution: 2019-05-22 10:03
-
-Contribution: 2019-05-22 10:04
-
-Contribution: 2019-05-22 10:05
-
-Contribution: 2019-05-22 10:06
-
-Contribution: 2019-05-22 10:07
-
-Contribution: 2019-05-22 10:08
-
-Contribution: 2019-05-22 10:09
-
-Contribution: 2019-05-23 10:00
-
-Contribution: 2019-05-23 10:01
-
-Contribution: 2019-05-23 10:02
-
-Contribution: 2019-05-23 10:03
-
-Contribution: 2019-05-23 10:04
-
-Contribution: 2019-05-24 10:00
-
-Contribution: 2019-05-24 10:01
-
-Contribution: 2019-05-24 10:02
-
-Contribution: 2019-05-24 10:03
-
-Contribution: 2019-05-24 10:04
-
-Contribution: 2019-05-24 10:05
-
-Contribution: 2019-05-24 10:06
-
-Contribution: 2019-05-24 10:07
-
-Contribution: 2019-05-27 10:00
-
-Contribution: 2019-05-27 10:01
-
-Contribution: 2019-05-27 10:02
-
-Contribution: 2019-05-31 10:00
-
-Contribution: 2019-05-31 10:01
-
-Contribution: 2019-05-31 10:02
-
-Contribution: 2019-05-31 10:03
-
-Contribution: 2019-05-31 10:04
-
-Contribution: 2019-05-31 10:05
-
-Contribution: 2019-05-31 10:06
-
-Contribution: 2019-05-31 10:07
-
-Contribution: 2019-05-31 10:08
-
-Contribution: 2019-05-31 10:09
-
-Contribution: 2019-05-31 10:10
-
-Contribution: 2019-05-31 10:11
-
-Contribution: 2019-06-03 10:00
-
-Contribution: 2019-06-03 10:01
-
-Contribution: 2019-06-03 10:02
-
-Contribution: 2019-06-03 10:03
-
-Contribution: 2019-06-03 10:04
-
-Contribution: 2019-06-04 10:00
-
-Contribution: 2019-06-04 10:01
-
-Contribution: 2019-06-04 10:02
-
-Contribution: 2019-06-04 10:03
-
-Contribution: 2019-06-04 10:04
-
-Contribution: 2019-06-05 10:00
-
-Contribution: 2019-06-05 10:01
-
-Contribution: 2019-06-05 10:02
-
-Contribution: 2019-06-05 10:03
-
-Contribution: 2019-06-05 10:04
-
-Contribution: 2019-06-10 10:00
-
-Contribution: 2019-06-10 10:01
-
-Contribution: 2019-06-10 10:02
-
-Contribution: 2019-06-10 10:03
-
-Contribution: 2019-06-10 10:04
-
-Contribution: 2019-06-13 10:00
-
-Contribution: 2019-06-14 10:00
-
-Contribution: 2019-06-14 10:01
-
-Contribution: 2019-06-14 10:02
-
-Contribution: 2019-06-14 10:03
-
-Contribution: 2019-06-14 10:04
-
-Contribution: 2019-06-14 10:05
-
-Contribution: 2019-06-14 10:06
-
-Contribution: 2019-06-14 10:07
-
-Contribution: 2019-06-14 10:08
-
-Contribution: 2019-06-18 10:00
-
-Contribution: 2019-06-18 10:01
-
-Contribution: 2019-06-18 10:02
-
-Contribution: 2019-06-18 10:03
-
-Contribution: 2019-06-18 10:04
-
-Contribution: 2019-06-18 10:05
-
-Contribution: 2019-06-25 10:00
-
-Contribution: 2019-06-25 10:01
-
-Contribution: 2019-06-25 10:02
-
-Contribution: 2019-06-25 10:03
-
-Contribution: 2019-06-25 10:04
-
-Contribution: 2019-06-25 10:05
-
-Contribution: 2019-06-25 10:06
-
-Contribution: 2019-06-27 10:00
-
-Contribution: 2019-06-27 10:01
-
-Contribution: 2019-06-27 10:02
-
-Contribution: 2019-06-27 10:03
-
-Contribution: 2019-06-27 10:04
-
-Contribution: 2019-06-27 10:05
-
-Contribution: 2019-06-27 10:06
-
-Contribution: 2019-06-27 10:07
-
-Contribution: 2019-06-27 10:08
-
-Contribution: 2019-06-27 10:09
-
-Contribution: 2019-06-28 10:00
-
-Contribution: 2019-06-28 10:01
-
-Contribution: 2019-06-28 10:02
-
-Contribution: 2019-07-01 10:00
-
-Contribution: 2019-07-01 10:01
-
-Contribution: 2019-07-01 10:02
-
-Contribution: 2019-07-03 10:00
-
-Contribution: 2019-07-03 10:01
-
-Contribution: 2019-07-03 10:02
-
-Contribution: 2019-07-04 10:00
-
-Contribution: 2019-07-04 10:01
-
-Contribution: 2019-07-04 10:02
-
-Contribution: 2019-07-04 10:03
-
-Contribution: 2019-07-04 10:04
-
-Contribution: 2019-07-04 10:05
-
-Contribution: 2019-07-04 10:06
-
-Contribution: 2019-07-04 10:07
-
-Contribution: 2019-07-05 10:00
-
-Contribution: 2019-07-05 10:01
-
-Contribution: 2019-07-05 10:02
-
-Contribution: 2019-07-05 10:03
-
-Contribution: 2019-07-05 10:04
-
-Contribution: 2019-07-05 10:05
-
-Contribution: 2019-07-05 10:06
-
-Contribution: 2019-07-08 10:00
-
-Contribution: 2019-07-08 10:01
-
-Contribution: 2019-07-08 10:02
-
-Contribution: 2019-07-08 10:03
-
-Contribution: 2019-07-10 10:00
-
-Contribution: 2019-07-10 10:01
-
-Contribution: 2019-07-10 10:02
-
-Contribution: 2019-07-10 10:03
-
-Contribution: 2019-07-10 10:04
-
-Contribution: 2019-07-10 10:05
-
-Contribution: 2019-07-10 10:06
-
-Contribution: 2019-07-10 10:07
-
-Contribution: 2019-07-10 10:08
-
+If you have any questions, suggestions, feedback, please reach out to [contact@lightgalleryjs.com](mailto:contact@lightgalleryjs.com) or DM me on [twitter](https://twitter.com/SachinNeravath)
